@@ -75,6 +75,24 @@ def label_zero_proto_lst(s):
     else:
         return 0
 
+#爬取网页数据
+# base_url = 'https://pantheon.stanford.edu/summary/?page=%s'
+# get_days = 200  #定义多少天
+# df_list = []
+# for i in range(get_days):
+#     url = base_url %(i+1)
+#     web_content = requests.get(url)
+#     web_content.encoding = 'utf-8'
+#     soup = BeautifulSoup(web_content.text,'lxml')  
+#     soup_df = pd.DataFrame()
+#     #bs对象转换为DataFrame
+#     soup_to_df(soup)
+#     df_list.append(soup_df)
+# result_df = pd.concat(df_list).reset_index(drop=True)
+# print("data columns",result_df.shape[0])
+
+# result_df.to_csv('pantheon_rank_200day.csv')
+
 result_df = pd.read_csv('pantheon_rank_200day.csv',index_col=0)
 
 result_df['valval'] = result_df['valval'].apply(lambda s:literal_eval(s))
