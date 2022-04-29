@@ -17,10 +17,10 @@ import random
 #fig, axes = plt.subplots(nrows=1, ncols=4, figsize=(12,5))
 fig, axes = plt.subplots(nrows=2, ncols=2)
 
-MUfile = file('MU.csv','rb')
-MTfile = file('MT.csv','rb')
-UTfile = file('UT.csv','rb')
-MTUfile = file('MTU.csv','rb')
+MUfile = open('MU.csv')
+MTfile = open('MT.csv')
+UTfile = open('UT.csv')
+MTUfile = open('MTU.csv')
 
 MUreader = csv.reader(MUfile, delimiter=',')
 MTreader = csv.reader(MTfile, delimiter=',')
@@ -44,10 +44,10 @@ for efficient, order in MUreader :
 # for i in range(len(low_data)):
 #     static_data.append(random.random()+1)
 static_data = stats.norm(1.4,0.3).rvs(1000)
-static_data = map(float, static_data)
-low_data = map(float,low_data)
+static_data = list(map(float, static_data))
+low_data = list(map(float,low_data))
 low_data.append(0.0)
-high_data = map(float,high_data)
+high_data = list(map(float,high_data))
 high_data.append(0.0)
 data.append([static_data, low_data, high_data])
 static_data=[]
@@ -66,10 +66,10 @@ for efficient, order in MTreader :
 # for i in range(len(low_data)):
 #     static_data.append(random.random()+1)
 static_data = stats.norm(1.0,0.2).rvs(1000)
-static_data = map(float, static_data)
-low_data = map(float,low_data)
+static_data = list(map(float, static_data))
+low_data = list(map(float,low_data))
 low_data.append(0.0)
-high_data = map(float,high_data)
+high_data = list(map(float,high_data))
 high_data.append(0.0)
 data.append([static_data, low_data, high_data])
 static_data=[]
@@ -88,10 +88,10 @@ for efficient, order in UTreader :
 # for i in range(len(low_data)):
 #     static_data.append(random.random()+1)
 static_data = stats.norm(1.2,0.28).rvs(1000)
-static_data = map(float, static_data)
-low_data = map(float,low_data)
+static_data = list(map(float, static_data))
+low_data = list(map(float,low_data))
 low_data.append(0.0)
-high_data = map(float,high_data)
+high_data = list(map(float,high_data))
 high_data.append(0.0)
 data.append([static_data, low_data, high_data])
 static_data=[]
@@ -111,10 +111,10 @@ for efficient, order in MTUreader :
 #     static_data.append(random.random()+1)
 # static_data = map(float,static_data)
 static_data = stats.norm(1.6,0.3).rvs(1000)
-static_data = map(float, static_data)
-low_data = map(float,low_data)
+static_data = list(map(float, static_data))
+low_data = list(map(float,low_data))
 low_data.append(0.0)
-high_data = map(float,high_data)
+high_data = list(map(float,high_data))
 high_data.append(0.0)
 data.append([static_data, low_data, high_data])
 static_data=[]
